@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DNIDetector.Features.Validation"
+             x:Class="DNIDetector.Features.Validation.ResultsView">
+    <ContentPage.BindingContext>
+        <local:ResultsViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label Text="Is the same person?"
+               VerticalOptions="Center" 
+               HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center" LineBreakMode="WordWrap"
+               FontSize="Large" TextColor="Blue"/>
+        <Label Text="{Binding Result.IsIdentical}"
+               VerticalOptions="Center" 
+               HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center" LineBreakMode="WordWrap"
+               FontSize="Large" TextColor="Blue"/>
+
+        <Label Text="% de seguridad:" Margin="0,20,0,0"
+               VerticalOptions="Center" 
+               HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center" LineBreakMode="WordWrap"
+               FontSize="Medium" TextColor="Green"/>
+        <Label Text="{Binding Result.PercentConfidence}"
+               VerticalOptions="Center" 
+               HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center" LineBreakMode="WordWrap"
+               FontSize="Medium" TextColor="Green"/>
+    </StackLayout>
+</ContentPage>
